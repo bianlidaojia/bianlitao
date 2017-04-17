@@ -12,37 +12,7 @@ import details from '@/components/details'
 
 Vue.use(Router)
 
-// export default new Router({
-//   routes: [
-//     {
-//       path: '/',
-//       name: 'main',
-//       component: main
-//     },
-//     {
-//       path: '/only',
-//       name: 'only',
-//       component: only,
-//       children:[
-//         {       
-//           path: '/only/orderManage',
-//           name: 'orderManage',
-//           component: orderManage
-//         },
-//         {
-//           path: '/only/member',
-//           name: 'member',
-//           component: member
-//         }
-//       ]
-//     },
-//     {
-//           path: '/only/details',
-//           name: 'details',
-//           component: details
-//    }
-//   ]
-// })
+
 export default new Router({
   routes: [
     {
