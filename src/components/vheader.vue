@@ -21,7 +21,7 @@
         <div class="nav-bar">
               <div class="back_index" style="float:left;"><img src="../assets/images/backindex.png" alt=""></div>
               <ul class="nav-list">
-                <li class="nav-choose nav-index">首页</li>
+                <router-link to="/only/tao/orderManage" class="nav-choose nav-index">首页</router-link>
                 <li class="nav-choose nav-user">账户设置<i class="nav-user-choose"></i></li>
                 <li class="nav-choose nav-news">消息<span class="tip-news">3</span></li>
                 <li class="nav-choose nav-help">帮助</li>
@@ -29,7 +29,8 @@
         </div>
       </div>
     </div>
-    <only></only>
+    <!--<only></only>-->
+
   </div>
     
 </template>
@@ -138,7 +139,7 @@ export default {
 
    .mainbody{
       width: 1200px;
-      margin: 10px auto;
+      margin: 0 auto;
       background: #f5f5f5;
       overflow: hidden;
       /*min-height:800px;*/
@@ -164,4 +165,15 @@ export default {
 .right-con{width: 888px;float: left;padding: 0 50px 30px;background: #fff;min-height: 490px;}
 .mainbody .left-menu .item:hover{background: #fff;color:#ff7b3f;}
 .mainbody .left-menu .item:hover  em{display: inline;width:3px;height: 24px;background: #ff7b3f;position: absolute;left: 0;top: 14px;border-radius: 5px;}
+
+.main_right{float:left;width:1000px;margin-left:8px;}
+.main_right .index{color:#f08e39;height:45px;line-height: 45px;margin-left:20px;font-weight: 600;} 
+.main_right .index a{height:100%;display: block;float:left;margin-left:15px;}
+.main_right .index i{content:"";background: url(../assets/images/index.png) no-repeat;display: block;width:24px;height:22px;position: relative;top:12px;left:5px;float:left;}
+.main_right .content{width:980px;height:480px;background-color:#fff; margin-left:20px;}
+.right-con ul{width:70%;padding:50px 0px 50px 20px;height:28%;}
+.right-con  ul li{float: left;margin-left:40px;cursor:pointer;}
+.xiaopiao{display: block;width:250px;height:142px;background: url(../assets/images/xiaopiao.png) no-repeat;}
+.tixian{display: block;width:250px;height:142px;background: url(../assets/images/tixian.png) no-repeat;}
+.right-con  ul li .tie{text-indent:4px;font-size:14px;display: block;width:30px;height:30px;position: relative;top:-23px;left:241px;background: url(../assets/images/tie.png)no-repeat;line-height: 30px;color:#fff;}
 </style>
