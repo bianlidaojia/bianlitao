@@ -10,7 +10,7 @@
 // import Router from 'vue-router'
 import vHeader from './components/vheader'
 export default {
-  components:{
+  components: {
     vHeader
   },
   name: 'app'

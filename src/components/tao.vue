@@ -17,7 +17,7 @@
                     </div>
                         <i style="display: inline-block; background:url(../static/images/mywallet.png) no-repeat;background-position:-31px -432px ; width: 24px; height: 34px; margin-left: 25px; margin-top: 21px;"></i>
                 </div>
-                <div class="day-earnings">
+                <div  class="day-earnings">
                     <p class="tit">今日收益</p>
                     <p class="rate"><em>0.007</em></p>
                 </div>

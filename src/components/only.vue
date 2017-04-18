@@ -27,6 +27,7 @@ export default {
     
   },
  created() {
+  //  debugger
         this.$nextTick(function(){
             // 便利淘、便利购、便利筹切换
           $(".main_outer .main_header_nav ul div").click(function(){
