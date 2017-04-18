@@ -3,9 +3,9 @@
     <div class="order_head">
         <div class="order_tab">
           <ul>
-            <router-link id="taobao1" :to="{name:'taobao'}" @click="toggle" :class="{'selected':isA == 'taobao1'}">淘宝</router-link>
-            <a id="jindong" @click="toggle" :class="{'selected':isA == 'jindong'}"> 京东</a>
-            <router-link id="piao" :to="{name:'smTicket'}" :class="{'selected':isA == 'piao'}" @click="toggle">小票</router-link>
+            <router-link id="taobao1" :to="{name:'taobao'}" @click="toggle('taobao1')" :class="{'selected':tab == 'taobao1'}">淘宝</router-link>
+            <a id="jindong" @click="toggle('jindong')" :class="{'selected':tab == 'jindong'}"> 京东</a>
+            <router-link id="piao" :to="{name:'smTicket'}" :class="{'selected':tab == 'piao'}" @click="toggle('piao')">小票</router-link>
           </ul>
         </div>
         <div class="search_parms">
@@ -32,7 +32,7 @@
 export default {
   data () {
     return {
-      isA:false
+      tab:false
     }
   },
   created:function(){ //这里mounted和created生命周期函数区
@@ -44,8 +44,7 @@ export default {
             
           }
       }).then(function(res){
-          console.log(res)
-          debugger
+          // console.log(res)
         }).catch(function(err){
           console.log(err)
         })
@@ -53,9 +52,9 @@ export default {
   },
   methods: {
     toggle:function(e){
-      let isA = e.currentTarget.id;
-      alert(isA)
-      this.isA = isA;
+      // let isA = e.currentTarget.id;
+      alert(tab)
+      this.tab = e;
       // e.currentTarget.isA = !currentTarget.isA;
     }
   }

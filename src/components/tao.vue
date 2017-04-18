@@ -15,7 +15,7 @@
                         <p class="tit">年化收益<i></i></p>
                         <p class="rate"><em>0</em><span>(%)</span></p>
                     </div>
-                        <i class="up_icon"></i>
+                        <i style="display: inline-block; background:url(../static/images/mywallet.png) no-repeat;background-position:-31px -432px ; width: 24px; height: 34px; margin-left: 25px; margin-top: 21px;"></i>
                 </div>
                 <div  class="day-earnings">
                     <p class="tit">今日收益</p>
@@ -39,7 +39,7 @@
             <div class="mainbody">
                 <div class="left-menu">
                   <router-link class="item " id="my"   :to="{name: 'member'}" @click="toggle" :class="{'router-link-active':isA == 'my'}"><i class="i-0"><em></em></i><span>我的便利淘</span></router-link>
-                  <router-link class="item " id="Order"  :to="{name: 'orderManage'}" @click="toggle" :class="{'router-link-active':isA == 'Order'}"><i class="i-1" ><em></em></i><span>用户订单管理</span></router-link>
+                  <router-link class="item " id="Order"  :to="{name: 'taobao'}" @click="toggle" :class="{'router-link-active':isA == 'Order'}"><i class="i-1" ><em></em></i><span>用户订单管理</span></router-link>
                   <router-link class="item " id="userP"  :to="{name: 'userProfit'}" @click="toggle" :class="{'router-link-active':isA == 'userP'}"><i class="i-2" ><em></em></i><span>用户收益管理</span></router-link>
                   <a class="item " id="wit"  @click="toggle" :class="{'router-link-active':isA == 'wit'}"><i class="i-3" ><em></em></i><span>用户提现管理</span></a>
                   <a class="item " id="Profit"  @click="toggle" :class="{'router-link-active':isA == 'Profit'}"><i class="i-4" ><em></em></i><span>推广收益管理</span></a>
@@ -106,7 +106,7 @@ export default {
 .user-info .user-data .item{float: left;width: 100px;padding-top: 25px;text-align: center;}
 .user-info .user-data .item .number{font-size:34px;color: #666666; }
 .user-info .user-data .item .txt{color: #a6a6a6;font-family: "宋体" ;font-size:12px; }
-.up_icon{display: inline-block; background:url(../assets/images/mywallet.png) no-repeat;background-position:-31px -432px ; width: 24px; height: 34px; margin-left: 25px; margin-top: 21px;}
+
  .mainbody{
       width: 1200px;
       margin: 0 auto;

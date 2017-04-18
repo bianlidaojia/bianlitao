@@ -13,7 +13,6 @@ import smTicket from '@/components/smTicket'
 
 
 Vue.use(Router)
-
 export default new Router({
   routes: [
     {

@@ -7,24 +7,20 @@
          <li>订单状态</li>
          <li style="width:20%;">订单操作</li>
        </ul>
-       <ul class="ul2">
-         <li style="width:20%;">0298655689</li>
-         <li>31704719831660986</li>
-         <li>2017-03-26 14:45:46</li>
-         <li>已存入</li>
-         <li style="width:20%;color:#ff7b3f;cursor:pointer;"> <router-link :to="{name:'details'}">查看订单</router-link></li>
+       <ul class="ul2" v-for="(item,index) in list.data">
+         <li style="width:20%;" v-text="`${item.member_id}`">0298655689</li>
+         <li v-text="`${item.order_number}`">31704719831660986</li>
+         <li v-text="`${item.create_time}`">2017-03-26 14:45:46</li>
+         <li v-if="item.order_status == 20">待审核</li>
+         <li v-else-if="item.order_status == 30">已存入</li>
+         <li v-else>无效</li>
+         <li style="width:20%;color:#ff7b3f;cursor:pointer;"><router-link to="details" v-if="item.order_status == 20" >审核小票</router-link>
+         <router-link to="details" v-else>查看订单</router-link></li>
        </ul>
         <ul class="ul3">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>下一页</li>
+          <li v-for="n in (+list.totalPage)" @click="toggleN(n)">{{n}}</li>
         </ul>
+        <botton @click="toggle">下一页</botton>
     </div>
 </template>
 
@@ -32,27 +28,42 @@
  export default {
   data () {
     return {
-      isA:false
+      isA:false,
+      page1:0,
+      list:[]
     }
   },
-  created:function(){ //这里mounted和created生命周期函数区
-      
-        this.$ajax({
-          method: 'get',
-          url: 'static/ticketList.json',
-          data: {
-            
-          }
-      }).then(function(res){
-          console.log(res)
-          debugger
-        }).catch(function(err){
-          console.log(err)
-        })
-      
+  created () {
+    this.getList(1)
   },
   methods: {
-      
+      getList (i) {
+          if(i > this.list.totalPage){
+              alert("没有下一页了")
+              return
+          }
+          this.page1 = i
+          this.$ajax({
+          method: 'get',
+          url: 'static/json/ticketList.json',
+          data: {
+            totalPage:i
+          }
+      }).then((res) => {
+          console.log(res);
+          this.list = res.data;
+        //   debugger
+        }).catch((err) => {
+          console.log(err)
+        })
+      },
+      toggle() {
+          const n = this.page1 +1
+          this.getList(n)
+      },
+      toggleN(n){
+          this.getList(n)
+      }
   }
 }
 </script>
@@ -73,5 +84,5 @@ ul li{
   .order_data .ul1 li{width:20%;background:#f5f5f5;height: 50px;line-height: 50px;text-align: center;color:#696969;}
   .ul2 li{width:20%;font-size:14px;color:#959595;text-align: center;height:60px;line-height: 60px;border-bottom:1px solid #959595;}
   .ul3 li{width:35px;height:35px;line-height:35px;text-align: center;color:#696969;background: #f5f5f5;margin-left:5px;margin-top:20px;cursor: pointer;}
-   .ul3 li:last-child{width:100px;background: #ff7b3f;color:#fff;}
+    botton{width:50px;height: 35px;float: left;background: #ff7b3f;color:#fff;margin-left:5px;margin-top:20px;line-height:35px;text-align:}
 </style>
