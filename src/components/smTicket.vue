@@ -12,7 +12,7 @@
          <li>31704719831660986</li>
          <li>2017-03-26 14:45:46</li>
          <li>已存入</li>
-         <li style="width:20%;color:#ff7b3f;cursor:pointer;"> <router-link to="details">查看订单</router-link></li>
+         <li style="width:20%;color:#ff7b3f;cursor:pointer;"> <router-link :to="{name:'details'}">查看订单</router-link></li>
        </ul>
         <ul class="ul3">
           <li>1</li>
