@@ -15,7 +15,7 @@
                         <p class="tit">年化收益<i></i></p>
                         <p class="rate"><em>0</em><span>(%)</span></p>
                     </div>
-                        <i style="display: inline-block; background:url(../static/images/mywallet.png) no-repeat;background-position:-31px -432px ; width: 24px; height: 34px; margin-left: 25px; margin-top: 21px;"></i>
+                        <i class="up_icon"></i>
                 </div>
                 <div  class="day-earnings">
                     <p class="tit">今日收益</p>
@@ -106,7 +106,7 @@ export default {
 .user-info .user-data .item{float: left;width: 100px;padding-top: 25px;text-align: center;}
 .user-info .user-data .item .number{font-size:34px;color: #666666; }
 .user-info .user-data .item .txt{color: #a6a6a6;font-family: "宋体" ;font-size:12px; }
-
+.up_icon{display: inline-block; background:url(../assets/images/mywallet.png) no-repeat;background-position:-31px -432px ; width: 24px; height: 34px; margin-left: 25px; margin-top: 21px;}
  .mainbody{
       width: 1200px;
       margin: 0 auto;
