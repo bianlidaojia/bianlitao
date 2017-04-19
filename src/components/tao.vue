@@ -38,16 +38,16 @@
            <!--主题内容-->
             <div class="mainbody">
                 <div class="left-menu">
-                  <router-link class="item " id="my"   :to="{name: 'member'}" @click="toggle" :class="{'router-link-active':isA == 'my'}"><i class="i-0"><em></em></i><span>我的便利淘</span></router-link>
-                  <router-link class="item " id="Order"  :to="{name: 'taobao'}" @click="toggle" :class="{'router-link-active':isA == 'Order'}"><i class="i-1" ><em></em></i><span>用户订单管理</span></router-link>
-                  <router-link class="item " id="userP"  :to="{name: 'userProfit'}" @click="toggle" :class="{'router-link-active':isA == 'userP'}"><i class="i-2" ><em></em></i><span>用户收益管理</span></router-link>
-                  <a class="item " id="wit"  @click="toggle" :class="{'router-link-active':isA == 'wit'}"><i class="i-3" ><em></em></i><span>用户提现管理</span></a>
-                  <a class="item " id="Profit"  @click="toggle" :class="{'router-link-active':isA == 'Profit'}"><i class="i-4" ><em></em></i><span>推广收益管理</span></a>
-                  <a class="item " id="subsidy"  @click="toggle" :class="{'router-link-active':isA == 'subsidy'}"><i class="i-5" ><em></em></i><span>推广补贴管理</span></a>
-                  <a class="item " id="Rebate"  @click="toggle" :class="{'router-link-active':isA == 'Rebate'}"><i class="i-7" ><em></em></i><span>商户返佣管理</span></a>
-                  <a class="item " id="Sign"  @click="toggle" :class="{'router-link-active':isA == 'Sign'}"><i class="i-8" ><em></em></i><span>签约商户管理</span></a>
-                  <a class="item " id="vip"  @click="toggle" :class="{'router-link-active':isA == 'vip'}"><i class="i-9" ><em></em></i><span>会员收费管理</span></a>
-                  <a class="item " id="son"  @click="toggle" :class="{'router-link-active':isA == 'son'}"><i class="i-10" ><em></em></i><span>子账号管理</span></a>
+                  <router-link class="item " :to="{name: 'member'}" @click.native="toggle('my')" :class="{'toggleAc':isA == 'my'}"><i class="i-0"><em></em></i><span>我的便利淘</span></router-link>
+                  <router-link class="item " :to="{name: 'taobao'}" @click.native="toggle('Order')" :class="{'toggleAc':isA == 'Order'}"><i class="i-1" ><em></em></i><span>用户订单管理</span></router-link>
+                  <router-link class="item " :to="{name: 'userProfit'}" @click.native="toggle('userP')" :class="{'toggleAc':isA == 'userP'}"><i class="i-2" ><em></em></i><span>用户收益管理</span></router-link>
+                  <a class="item " @click.native="toggle('wit')" :class="{'toggleAc':isA == 'wit'}"><i class="i-3" ><em></em></i><span>用户提现管理</span></a>
+                  <a class="item " @click.native="toggle('Profit')" :class="{'toggleAc':isA == 'Profit'}"><i class="i-4" ><em></em></i><span>推广收益管理</span></a>
+                  <a class="item " @click.native="toggle('subsidy')" :class="{'toggleAc':isA == 'subsidy'}"><i class="i-5" ><em></em></i><span>推广补贴管理</span></a>
+                  <a class="item " @click.native="toggle('Rebate')" :class="{'toggleAc':isA == 'Rebate'}"><i class="i-7" ><em></em></i><span>商户返佣管理</span></a>
+                  <a class="item " @click.native="toggle('Sign')" :class="{'toggleAc':isA == 'Sign'}"><i class="i-8" ><em></em></i><span>签约商户管理</span></a>
+                  <a class="item " @click.native="toggle('vip')" :class="{'toggleAc':isA == 'vip'}"><i class="i-9" ><em></em></i><span>会员收费管理</span></a>
+                  <a class="item " @click.native="toggle('son')" :class="{'toggleAc':isA == 'son'}"><i class="i-10" ><em></em></i><span>子账号管理</span></a>
                 </div>
                 <div class="right-con">
                    <router-view></router-view>
@@ -72,10 +72,8 @@ export default {
     }
   },
   methods:{
-    toggle:function(e){
-      let isA = e.currentTarget.id;
-      this.isA = isA;
-      // e.currentTarget.isA = !currentTarget.isA;
+   toggle:function(e){
+      this.isA = e;
     }
   }
  
@@ -130,8 +128,8 @@ export default {
 .mainbody .left-menu .item i.i-8{background:url(../assets/images/007.png) no-repeat;}
 .mainbody .left-menu .item i.i-9{background:url(../assets/images/008.png) no-repeat;}
 .mainbody .left-menu .item i.i-10{background:url(../assets/images/009.png) no-repeat;}
-.mainbody .left-menu .item.router-link-active{background: #fff;color:#ff7b3f;}
-.mainbody .left-menu .item.router-link-active em{display: inline;width:3px;height: 24px;background: #ff7b3f;position: absolute;left: 0;top: 14px;border-radius:50px;}
+.mainbody .left-menu .item.toggleAc{background: #fff;color:#ff7b3f;}
+.mainbody .left-menu .item.toggleAc em{display: inline;width:3px;height: 24px;background: #ff7b3f;position: absolute;left: 0;top: 14px;border-radius:50px;}
 .right-con{width: 888px;float: left;padding: 0 50px 30px;background: #fff;min-height: 490px;}
 .mainbody .left-menu .item:hover{background: #fff;color:#ff7b3f;}
 .mainbody .left-menu .item:hover  em{display: inline;width:3px;height: 24px;background: #ff7b3f;position: absolute;left: 0;top: 14px;border-radius: 5px;}

@@ -3,9 +3,9 @@
     <div class="order_head">
         <div class="order_tab">
           <ul>
-            <router-link id="taobao1" :to="{name:'taobao'}" @click="toggle" :class="{'selected':isA == 'taobao1'}">淘宝</router-link>
-            <a id="jindong" @click="toggle" :class="{'selected':isA == 'jindong'}"> 京东</a>
-            <router-link id="piao" :to="{name:'smTicket'}" :class="{'selected':isA == 'piao'}" @click="toggle">小票</router-link>
+            <router-link :to="{name:'taobao'}" @click.native="toggle('taobao')" :class="{'selected':isA == 'taobao' || !isA}" >淘宝</router-link>
+            <router-link :to="{name:'smTicket'}" @click.native="toggle('jindong')" :class="{'selected':isA == 'jindong'}"> 京东</router-link>
+            <router-link :to="{name:'smTicket'}" @click.native="toggle('piao')" :class="{'selected':isA == 'piao'}">小票</router-link>
           </ul>
         </div>
         <div class="search_parms">
@@ -52,10 +52,7 @@ export default {
   },
   methods: {
     toggle:function(e){
-      let isA = e.currentTarget.id;
-      alert(isA)
-      this.isA = isA;
-      // e.currentTarget.isA = !currentTarget.isA;
+      this.isA = e;
     }
   }
 }
