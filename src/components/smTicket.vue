@@ -14,8 +14,8 @@
          <li v-if="item.order_status == 20">待审核</li>
          <li v-else-if="item.order_status == 30">已存入</li>
          <li v-else>无效</li>
-         <li style="width:20%;color:#ff7b3f;cursor:pointer;"><router-link to="details" v-if="item.order_status == 20" >审核小票</router-link>
-         <router-link to="details" v-else>查看订单</router-link></li>
+         <li style="width:20%;color:#ff7b3f;cursor:pointer;"><router-link :to="{name:'details'}" v-if="item.order_status == 20" >审核小票</router-link>
+         <router-link :to="{name:'details'}" v-else>查看订单</router-link></li>
        </ul>
         <ul class="ul3">
           <li v-for="n in (+list.totalPage)" @click="toggleN(n)">{{n}}</li>
