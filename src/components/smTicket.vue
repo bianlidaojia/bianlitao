@@ -35,6 +35,7 @@
   },
   created () {
     this.getList(1)
+   
   },
   methods: {
       getList (i) {
