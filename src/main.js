@@ -5,7 +5,10 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
 import "./assets/css/main.css"
+Vue.use(ElementUI)
 Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
 Vue.prototype.$ajax = axios
@@ -15,7 +18,8 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: { App },
+  render: h => h(App)
 })
 // router.map({
 //   //默认指向index
