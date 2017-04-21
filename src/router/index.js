@@ -10,6 +10,8 @@ import userProfit from '@/components/userProfit'
 import details from '@/components/details'
 import taobao from '@/components/taobao'
 import smTicket from '@/components/smTicket'
+import profitTao from '@/components/profitTao'
+
 
 
 Vue.use(Router)
@@ -50,7 +52,14 @@ export default new Router({
             {
               path: '/only/tao/userProfit',
               name: 'userProfit',
-              component: userProfit
+              component: userProfit,
+              children:[
+                  {
+                    path: '/only/tao/userProfit/taobao',
+                    name: 'profitTao',
+                    component: profitTao
+                  }
+              ]
             }
           ]
         },

@@ -40,7 +40,7 @@
                 <div class="left-menu">
                   <router-link class="item " :to="{name: 'member'}" @click.native="toggle('my')" :class="{'toggleAc':isA == 'my'}"><i class="i-0"><em></em></i><span>我的便利淘</span></router-link>
                   <router-link class="item " :to="{name: 'taobao'}" @click.native="toggle('Order')" :class="{'toggleAc':isA == 'Order'}"><i class="i-1" ><em></em></i><span>用户订单管理</span></router-link>
-                  <router-link class="item " :to="{name: 'userProfit'}" @click.native="toggle('userP')" :class="{'toggleAc':isA == 'userP'}"><i class="i-2" ><em></em></i><span>用户收益管理</span></router-link>
+                  <router-link class="item " :to="{name: 'profitTao'}" @click.native="toggle('userP')" :class="{'toggleAc':isA == 'userP'}"><i class="i-2" ><em></em></i><span>用户收益管理</span></router-link>
                   <a class="item " @click.native="toggle('wit')" :class="{'toggleAc':isA == 'wit'}"><i class="i-3" ><em></em></i><span>用户提现管理</span></a>
                   <a class="item " @click.native="toggle('Profit')" :class="{'toggleAc':isA == 'Profit'}"><i class="i-4" ><em></em></i><span>推广收益管理</span></a>
                   <a class="item " @click.native="toggle('subsidy')" :class="{'toggleAc':isA == 'subsidy'}"><i class="i-5" ><em></em></i><span>推广补贴管理</span></a>
