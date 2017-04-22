@@ -4,7 +4,7 @@
         <div class="detail-header">
             <div class="detail-header-inside">
                 <div class="goBack">
-                <router-link :to="{name:'orderManage'}"><span class="icon_back"></span><span style="float:left;margin-left:10px;">返回</span></router-link>
+                <router-link :to="{name:'smTicket'}"><span class="icon_back"></span><span style="float:left;margin-left:10px;">返回</span></router-link>
                 </div>
                 <div class="inside-detail" id="profit">
                     审核小票
@@ -115,6 +115,7 @@
             isA:false,
             isB:false,
             isC:false,
+            defaultActive:this.$route.name,
             list:[],
             title:null,
             form: {
@@ -126,7 +127,7 @@
             };
         },
         created () {
-            this.getList()
+            this.getList();
         },
          methods: {
             getList () {

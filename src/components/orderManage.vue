@@ -3,9 +3,9 @@
     <div class="order_head">
         <div class="order_tab">
           <ul>
-            <router-link :to="{name:'taobao'}" @click.native="toggle('taobao')" :class="{'selected':isA == 'taobao' || !isA}" >淘宝</router-link>
-            <router-link :to="{name:'smTicket'}" @click.native="toggle('jindong')" :class="{'selected':isA == 'jindong'}"> 京东</router-link>
-            <router-link :to="{name:'smTicket'}" @click.native="toggle('piao')" :class="{'selected':isA == 'piao'}">小票</router-link>
+            <router-link :to="{name:'taobao'}" @click.native="toggle('taobao')" :class="{'selected':defaultActive == 'taobao' }" >淘宝</router-link>
+            <router-link :to="{name:'smTicket'}" @click.native="toggle('jindong')" :class="{'selected':defaultActive == 'smTicket'}"> 京东</router-link>
+            <router-link :to="{name:'smTicket'}" @click.native="toggle('piao')" :class="{'selected':defaultActive == 'smTicket'}">小票</router-link>
           </ul>
         </div>
         <div class="search_parms">
@@ -32,11 +32,11 @@
 export default {
   data () {
     return {
-      isA:false
+      isA:false,
+      defaultActive:this.$route.name
     }
   },
   created:function(){ //这里mounted和created生命周期函数区
-      
         this.$ajax({
           method: 'post',
           url: 'http://api-test.bianlitao.com.cn/index/personmessage',
@@ -52,6 +52,7 @@ export default {
   },
   methods: {
     toggle:function(e){
+      this.defaultActive=this.$route.name
       this.isA = e;
     }
   }

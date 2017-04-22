@@ -11,6 +11,7 @@ import details from '@/components/details'
 import taobao from '@/components/taobao'
 import smTicket from '@/components/smTicket'
 import profitTao from '@/components/profitTao'
+import withDrawals from '@/components/withDrawals'
 
 
 
@@ -55,11 +56,16 @@ export default new Router({
               component: userProfit,
               children:[
                   {
-                    path: '/only/tao/userProfit/taobao',
+                    path: '/only/tao/userProfit/profitTao',
                     name: 'profitTao',
                     component: profitTao
                   }
               ]
+            },
+            {
+              path: '/only/tao/withDrawals',
+              name: 'withDrawals',
+              component: withDrawals
             }
           ]
         },

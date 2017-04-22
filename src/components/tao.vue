@@ -38,10 +38,10 @@
            <!--主题内容-->
             <div class="mainbody">
                 <div class="left-menu">
-                  <router-link class="item " :to="{name: 'member'}" @click.native="toggle('my')" :class="{'toggleAc':isA == 'my'}"><i class="i-0"><em></em></i><span>我的便利淘</span></router-link>
-                  <router-link class="item " :to="{name: 'taobao'}" @click.native="toggle('Order')" :class="{'toggleAc':isA == 'Order'}"><i class="i-1" ><em></em></i><span>用户订单管理</span></router-link>
-                  <router-link class="item " :to="{name: 'profitTao'}" @click.native="toggle('userP')" :class="{'toggleAc':isA == 'userP'}"><i class="i-2" ><em></em></i><span>用户收益管理</span></router-link>
-                  <a class="item " @click.native="toggle('wit')" :class="{'toggleAc':isA == 'wit'}"><i class="i-3" ><em></em></i><span>用户提现管理</span></a>
+                  <router-link class="item " :to="{name: 'member'}" @click.native="toggle('my')" :class="{'toggleAc':isA == 'member'}"><i class="i-0"><em></em></i><span>我的便利淘</span></router-link>
+                  <router-link class="item " :to="{name: 'taobao'}" @click.native="toggle('Order')" :class="{'toggleAc':isA == 'taobao' || isA == 'smTicket'}"><i class="i-1" ><em></em></i><span>用户订单管理</span></router-link>
+                  <router-link class="item " :to="{name: 'profitTao'}" @click.native="toggle('userP')" :class="{'toggleAc':isA == 'profitTao'}"><i class="i-2" ><em></em></i><span>用户收益管理</span></router-link>
+                  <router-link class="item " :to="{name: 'withDrawals'}" @click.native="toggle('wit')" :class="{'toggleAc':isA == 'withDrawals'}"><i class="i-3" ><em></em></i><span>用户提现管理</span></router-link>
                   <a class="item " @click.native="toggle('Profit')" :class="{'toggleAc':isA == 'Profit'}"><i class="i-4" ><em></em></i><span>推广收益管理</span></a>
                   <a class="item " @click.native="toggle('subsidy')" :class="{'toggleAc':isA == 'subsidy'}"><i class="i-5" ><em></em></i><span>推广补贴管理</span></a>
                   <a class="item " @click.native="toggle('Rebate')" :class="{'toggleAc':isA == 'Rebate'}"><i class="i-7" ><em></em></i><span>商户返佣管理</span></a>
@@ -68,12 +68,13 @@ export default {
   // name: 'only',
   data () {
     return {
-      isA:false
+      isA:this.$route.name
     }
   },
   methods:{
    toggle:function(e){
-      this.isA = e;
+      this.isA = this.$route.name;
+      
     }
   }
  

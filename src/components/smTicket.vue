@@ -18,7 +18,7 @@
          <router-link :to="{name:'details'}" v-else>查看订单</router-link></li>
        </ul>
         <ul class="ul3">
-          <li v-for="n in (+list.totalPage)" @click="toggleN(n)">{{n}}</li>
+          <li v-for="n in (+list.totalPage)" @click="toggleN(n)">{{n}}</li>s
         </ul>
         <button @click="toggle">下一页</button>
     </div>
