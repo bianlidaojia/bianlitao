@@ -71,10 +71,10 @@
 
 <style>
 
-ul li{
+.order_data ul li{
     float: left
 }
-    .order_data{
+  .order_data{
   width:100%;
   height:200px;
   /*border:1px solid #ccc;*/
@@ -85,5 +85,5 @@ ul li{
   .order_data .ul1 li{width:20%;background:#f5f5f5;height: 50px;line-height: 50px;text-align: center;color:#696969;}
   .ul2 li{width:20%;font-size:14px;color:#959595;text-align: center;height:60px;line-height: 60px;border-bottom:1px solid #959595;}
   .ul3 li{width:35px;height:35px;line-height:35px;text-align: center;color:#696969;background: #f5f5f5;margin-left:5px;margin-top:20px;cursor: pointer;}
-    button{width:50px;height: 35px;float: left;background: #ff7b3f;color:#fff;margin-left:5px;margin-top:20px;line-height:35px;text-align:center;border: 0px;}
+  .order_data button{width:50px;height: 35px;float: left;background: #ff7b3f;color:#fff;margin-left:5px;margin-top:20px;line-height:35px;text-align:center;border: 0px;}
 </style>

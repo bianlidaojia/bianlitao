@@ -37,7 +37,7 @@
 </script>
 
 <style>
-ul li{
+.order_data1 ul li{
     float: left
 }
     .order_data1{
@@ -51,5 +51,5 @@ ul li{
   .order_data1 .ul1 li{width:16%;background:#f5f5f5;height: 50px;line-height: 50px;text-align: center;color:#696969;}
   .order_data1 .ul2 li{width:16%;font-size:14px;color:#959595;text-align: center;height:60px;line-height: 60px;border-bottom:1px solid #959595;}
   .order_data1 .ul3 li{width:35px;height:35px;line-height:35px;text-align: center;color:#696969;background: #f5f5f5;margin-left:5px;margin-top:20px;cursor: pointer;}
-   .order_data1 .ul3 li:last-child{width:100px;background: #ff7b3f;color:#fff;}
+  .order_data1 .ul3 li:last-child{width:100px;background: #ff7b3f;color:#fff;}
 </style>
