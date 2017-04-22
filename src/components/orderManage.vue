@@ -101,6 +101,7 @@ ul a{float:left;}
   padding-top:25px;
   /*border:1px solid red;*/
 }
+.order_head .search_parms ul li{float:left;}
 .order_head .search_parms ul li:first-child{
   margin-right:40px;
 }
