@@ -74,9 +74,33 @@
            </div>
        </div>
        <div class="shen">
-           <div v-on:click="showPop()">审核通过</div>
-           <div>审核失败</div>
+           <div @click="open(0)">审核通过</div>
+           <div @click="open(1)">审核失败</div>
        </div>
+        <el-dialog :title="title" v-model="dialogFormVisible">
+            <el-form @model="form">
+                <el-form-item label="请写入存入的小票金额" :label-width="formLabelWidth" v-show="!isB">
+                <el-input v-model="form.name" auto-complete="off" style="width:85%;"></el-input>
+                </el-form-item>
+                <el-form-item label="审核失败原因" :label-width="formLabelWidth" v-show="isB">
+                <el-select v-model="form.region" placeholder="请选择活动区域">
+                    <el-option label="不是小票" value="1"></el-option>
+                    <el-option label="小票拍摄不清晰" value="2"></el-option>
+                    <el-option label="未拍到小票金额" value="4"></el-option>
+                    <el-option label="不是当天的小票" value="5"></el-option>
+                    <el-option label="已超过小票上传规定期限" value="6"></el-option>
+                    <el-option label="其他" value="7"></el-option>
+                </el-select>
+                </el-form-item>
+                <el-form-item label="其他原因" :label-width="formLabelWidth" v-show="isC">
+                 <el-input type="textarea" v-model="form.other" placeholder="请保持在20字以内..." resize="none"></el-input>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogFormVisible = false">取 消</el-button>
+                <el-button type="primary" @click="close">确 定</el-button>
+            </div>
+            </el-dialog>
     </div>
    
 </template>
@@ -87,9 +111,19 @@
         name:'details',
         data () {
          return {
+            dialogFormVisible: false,
             isA:false,
-            list:[]
-            }
+            isB:false,
+            isC:false,
+            list:[],
+            title:null,
+            form: {
+                name: '',
+                region: '',
+                other:'',
+             },
+            formLabelWidth: '152px'
+            };
         },
         created () {
             this.getList()
@@ -106,13 +140,32 @@
         }).then((res) => {
             console.log(res);
             this.list = res.data.data;
-            //   debugger
             }).catch((err) => {
               console.log(err)
             })
-        }
+        },
+         open:function(a){
+          if(a==0){
+              this.title="审核通过";
+              this.isB=false;
+          }else if(a==1){
+              this.title="审核失败";
+              this.isB=true;
+          }
+         this.dialogFormVisible=true;
+          },
+        close:function(){
+           this.dialogFormVisible=false;
+           console.log(this.form.region);
+          }
+         },
+         watch:{
+            form:function(){
+                alert(1)
+                if(this.form.region=='1')
+                console.log(123);
+            } 
          }
-    
     }
 </script>
 
@@ -181,4 +234,8 @@
     .order-state .xiao_state{position: relative;}
     .order-state .xiao_state:before{content: "";width:0px;height:48px;border:1px solid #e5e5e5;position: absolute;top:50px;left:7px;}
     .status{color:#bae1b5;}
+    .el-dialog--small {
+    width: 33% !important;
+    }
+    .el-textarea__inner{height:75px !important;}
 </style>
