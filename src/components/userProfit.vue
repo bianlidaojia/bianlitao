@@ -4,8 +4,8 @@
         <div class="order_tab">
           <ul>
             <router-link :to="{name:'profitTao'}" @click.native="toggle('taobao')" :class="{'selected':isA == 'taobao' || !isA}" >淘宝</router-link>
-            <router-link :to="{name:'smTicket'}" @click.native="toggle('jindong')" :class="{'selected':isA == 'jindong'}"> 京东</router-link>
-            <router-link :to="{name:'smTicket'}" @click.native="toggle('piao')" :class="{'selected':isA == 'piao'}">小票</router-link>
+            <router-link :to="{name:'profitTao'}" @click.native="toggle('jindong')" :class="{'selected':isA == 'jindong'}"> 京东</router-link>
+            <router-link :to="{name:'profitTao'}" @click.native="toggle('piao')" :class="{'selected':isA == 'piao'}">小票</router-link>
           </ul>
         </div>
         <div class="search_parms">
