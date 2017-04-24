@@ -34,13 +34,14 @@
          <li v-else >{{"--"}}</li>
          <li v-if="item.order_id" v-text="`${item.comment}`"></li>
          <li v-else >{{"--"}}</li>                                                          
-         <li style="color:#ff7b3f;cursor:pointer;"><router-link :to="{name:'details'}" >查看详情</router-link></li>
+         <li style="color:#ff7b3f;cursor:pointer;"><router-link :to="{name:'withDrawalsDetail'}" >查看详情</router-link></li>
        </ul>
         <ul class="ul3">
           <li v-for="n in (+list.totalPage)" @click="toggleN(n)">{{n}}</li>
         </ul>
         <button @click="toggle">下一页</button>
     </div>
+
     </div>
 </template>
 <script>

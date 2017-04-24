@@ -38,9 +38,10 @@
 
 <style>
 .order_data1 ul li{
-    float: left
+    float: left;
+    /*border:1px solid red;*/
 }
-    .order_data1{
+.order_data1{
   width:100%;
   height:200px;
   /*border:1px solid #ccc;*/

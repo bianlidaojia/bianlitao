@@ -71,8 +71,9 @@
 
 <style>
 
-.order_data ul li{
-    float: left
+.order_data li{
+    float: left;
+    /*border:1px solid red;*/
 }
   .order_data{
   width:100%;

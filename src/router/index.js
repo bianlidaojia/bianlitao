@@ -12,6 +12,7 @@ import taobao from '@/components/taobao'
 import smTicket from '@/components/smTicket'
 import profitTao from '@/components/profitTao'
 import withDrawals from '@/components/withDrawals'
+import withDrawalsDetail from '@/components/withDrawalsDetail'
 
 
 
@@ -73,6 +74,11 @@ export default new Router({
           path: '/only/details/:id',
           name: 'details',
           component: details
+        },
+         {
+          path: '/only/withDrawalsDetail',
+          name: 'withDrawalsDetail',
+          component: withDrawalsDetail
         }
       ]
     },
