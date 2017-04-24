@@ -127,6 +127,8 @@
             };
         },
         created () {
+            const id = this.$route.params.id;
+            console.log(id);
             this.getList();
         },
          methods: {

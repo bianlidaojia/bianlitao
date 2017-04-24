@@ -70,7 +70,7 @@ export default new Router({
           ]
         },
         {
-          path: '/only/details',
+          path: '/only/details/:id',
           name: 'details',
           component: details
         }
