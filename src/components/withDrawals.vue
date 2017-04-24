@@ -21,20 +21,20 @@
          <li>申请时间</li>
          <li >提现状态</li>
          <li >付款订单号</li>
-         <li style="width: 10%">备注</li>
+         <li >备注</li>
          <li >功能操作</li>
        </ul>
        <ul class="ul2" v-for="(item,index) in list.list">
          <li  v-text="`${item.member_id}`">0298655689</li>
-         <li v-text="`${item.record_order_id}`">31704719831660986</li>
+         <li v-text="`${item.record_order_id}`" :title="`${item.record_order_id}`"></li>
          <li v-text="`${item.bh_money}`"></li>
          <li v-text="`${item.add_time}`"></li> 
-         <li v-text="`${item.name}`"></li>         
-         <li v-if="item.order_id" v-text="`${item.order_id}`"></li>
+         <li v-text="`${item.name}`" ></li>         
+         <li v-if="item.order_id" v-text="`${item.order_id}`" :title="`${item.order_id}`" ></li>
          <li v-else >{{"--"}}</li>
-         <li v-if="item.order_id" v-text="`${item.comment}`"></li>
+         <li v-if="item.order_id" v-text="`${item.comment}`" ></li>
          <li v-else >{{"--"}}</li>                                                          
-         <li style="color:#ff7b3f;cursor:pointer;"><router-link :to="{name:'withDrawalsDetail'}" >查看详情</router-link></li>
+         <li style="color:#ff7b3f;cursor:pointer;"><router-link :to="{name:'withDrawalsDetail'}">查看详情</router-link></li>
        </ul>
         <ul class="ul3">
           <li v-for="n in (+list.totalPage)" @click="toggleN(n)">{{n}}</li>
@@ -97,6 +97,8 @@
   padding-top:25px;
   margin-left: 20px;
   /*border:1px solid red;*/
+  text-overflow:ellipsis;
+  text-align: center;
 }
 .drawalsList .search_parms ul{width: 1200px;height: 60px}
 .drawalsList .search_parms ul li span{color:#696969;font-size:16px;margin-right:5px;}
@@ -105,10 +107,14 @@
 .drawalsList .search_parms ul input[type="button"]{width:63px;height:28px;line-height: 28px;background: #f5f5f5;border:1px solid #959595;}
 
 .drawalsList .order_data .ul1 li{
-    width:12.5%
+    width:12.5%;
+    text-overflow:ellipsis;
 }
 .drawalsList .order_data .ul2 li{
-    width:12.5%
+    width:12.5%;
+    cursor: pointer;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
 
 </style>

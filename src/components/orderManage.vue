@@ -4,7 +4,7 @@
         <div class="order_tab">
           <ul>
             <router-link :to="{name:'taobao'}" @click.native="toggle('taobao')" :class="{'selected':defaultActive == 'taobao' }" >淘宝</router-link>
-            <router-link :to="{name:'smTicket'}" @click.native="toggle('jindong')" :class="{'selected':defaultActive == 'smTicket'}"> 京东</router-link>
+            <router-link :to="{name:'smTicket'}" @click.native="toggle('jindong')" :class="{'selected':defaultActive == 'jindong'}"> 京东</router-link>
             <router-link :to="{name:'smTicket'}" @click.native="toggle('piao')" :class="{'selected':defaultActive == 'smTicket'}">小票</router-link>
           </ul>
         </div>
