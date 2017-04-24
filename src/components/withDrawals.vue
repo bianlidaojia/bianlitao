@@ -13,6 +13,7 @@
               <li><input type="text" name="search" value=""  placeholder="搜索用户ID/商品关键字/小票关键字"><input type="button" value="搜索"></li>
            </ul>
         </div>
+       <router-link :to="{name:'withDrawalsDetail'}"><button>提现详情</button></router-link>
     </div>
 </template>
 <script>

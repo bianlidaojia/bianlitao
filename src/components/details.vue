@@ -83,7 +83,7 @@
                 <el-input v-model="form.name" auto-complete="off" style="width:85%;"></el-input>
                 </el-form-item>
                 <el-form-item label="审核失败原因" :label-width="formLabelWidth" v-show="isB">
-                <el-select v-model="form.region" placeholder="请选择活动区域">
+                <el-select v-model="form.region" placeholder="请选择审核失败原因">
                     <el-option label="不是小票" value="1"></el-option>
                     <el-option label="小票拍摄不清晰" value="2"></el-option>
                     <el-option label="未拍到小票金额" value="4"></el-option>
@@ -98,7 +98,7 @@
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button @click="dialogFormVisible = false">取 消</el-button>
-                <el-button type="primary" @click="close">确 定</el-button>
+                <el-button type="primary" @click="sure">确 定</el-button>
             </div>
             </el-dialog>
     </div>
@@ -134,38 +134,28 @@
             this.$ajax({
             method: 'get',
             url: 'static/json/ticketDetail.json',
-            data: {
-                userID:"121212",
-                ticketID:"45454545"
-            }
-        }).then((res) => {
-            console.log(res);
-            this.list = res.data.data;
-            }).catch((err) => {
-              console.log(err)
-            })
-        },
-         open:function(a){
-          if(a==0){
-              this.title="审核通过";
-              this.isB=false;
-          }else if(a==1){
-              this.title="审核失败";
-              this.isB=true;
-          }
-         this.dialogFormVisible=true;
-          },
-        close:function(){
-           this.dialogFormVisible=false;
-           console.log(this.form.region);
-          }
+            data: {userID:"121212", ticketID:"45454545"}
+            }).then((res) => {
+                // console.log(res);
+                this.list = res.data.data;
+                }).catch((err) => {
+                console.log(err)
+                })
+            },
+            open:function(a){
+            if(a==0){this.title="审核通过";this.isB=false; }else if(a==1){this.title="审核失败";this.isB=true; }this.dialogFormVisible=true; },
+            sure:function(){
+                this.dialogFormVisible=false;
+                    // 审核通过或者失败请求接口
+                }
          },
          watch:{
-            form:function(){
-                alert(1)
-                if(this.form.region=='1')
-                console.log(123);
-            } 
+            'form.region':function(){
+                if(this.form.region=='7'){this.isC=true;}else{this.isC=false;} 
+            } ,
+            title:function(){
+              if(this.title=="审核通过") {this.isC=false;} else{this.isC=true;}
+            }
          }
     }
 </script>
